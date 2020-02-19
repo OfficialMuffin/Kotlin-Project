@@ -4,9 +4,32 @@ fun main(args : Array<String>) {
     user1.courseName.add("b) Computer Networking")
     user1.courseName.add("c) Games Development")
 
-    user1.coursePrerequisites.add("Maths - C")
-    user1.coursePrerequisites.add("English - Level 2")
-    user1.coursePrerequisites.add("ICT - C")
+    fun cs_prerequisites() {
+        user1.coursePrerequisites.add("Maths - B")
+        user1.coursePrerequisites.add("English - Level 2")
+        user1.coursePrerequisites.add("ICT - B")
+
+        for (p in user1.coursePrerequisites)
+            println(p)
+    }
+
+    fun cn_prerequisites() {
+        user1.coursePrerequisites.add("Maths - C")
+        user1.coursePrerequisites.add("English - Level 3")
+        user1.coursePrerequisites.add("ICT - C")
+
+        for (p in user1.coursePrerequisites)
+            println(p)
+    }
+
+    fun gd_prerequisites() {
+        user1.coursePrerequisites.add("Maths - A")
+        user1.coursePrerequisites.add("English - Level 1")
+        user1.coursePrerequisites.add("ICT - A")
+
+        for (p in user1.coursePrerequisites)
+            println(p)
+    }
 
     println("Please choose from one of the following options: ")
     for (courses in user1.courseName)
@@ -20,22 +43,19 @@ fun main(args : Array<String>) {
             println("You have chosen: ${user1.courseName[0]}")
             println("For this course, you must have the following " +
                     "Prerequisites: ")
-            for (p in user1.coursePrerequisites)
-                println(p)
+            cs_prerequisites()
         }
         "b" -> {
             println("You have chosen: ${user1.courseName[1]}")
             println("For this course, you must have the following " +
                     "Prerequisites: ")
-            for (p in user1.coursePrerequisites)
-                println(p)
+            cn_prerequisites()
         }
         "c" -> {
             println("You have chosen: ${user1.courseName[2]}")
             println("For this course, you must have the following " +
                     "Prerequisites: ")
-            for (p in user1.coursePrerequisites)
-                println(p)
+            gd_prerequisites()
         }
         else -> println("Invalid Input")
     }
